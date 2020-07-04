@@ -55,8 +55,8 @@ submitButton.addEventListener('click', (e) => {
 // handle received
 socket.on('chat', (data) => {
   if (data.name === name) {
-    
-      allMessages.innerHTML += `	
+
+    allMessages.innerHTML += `	
       <div class="single-message-owner">
        <div class="handle-owner">
          <span class="sent-message-user">You</span>
@@ -70,14 +70,14 @@ socket.on('chat', (data) => {
      </div>
    
      `
-    
+
 
 
   } else {
     allMessages.innerHTML += `
     <div class="single-message">
     <div class="handle">
-      <span class="sent-message-user">You</span>
+      <span class="sent-message-user">${data.name}</span>
       <span class="sent-message-date">${data.time}</span>
       <span class="sent-message-date">${data.day}</span>
     </div>

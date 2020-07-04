@@ -25,11 +25,11 @@ io.on('connection', (socket) => {
   });
   socket.on('userTyping', (name) => {
 
-    io.sockets.emit('userTyping', (name))
+    socket.broadcast.emit('userTyping', (name))
   });
   socket.on('doneTyping', () => {
 
-    io.sockets.emit('doneTyping')
+    socket.broadcast.emit('doneTyping')
   });
 });
 
